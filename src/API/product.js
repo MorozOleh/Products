@@ -8,7 +8,7 @@ export const products = [{
     height: 420
   },
   weight: '200g',
-  comments: [Comment, Comment]
+  comments: ['Good quality', 'not bad']
 },
 {
   id: 4,
@@ -20,7 +20,7 @@ export const products = [{
     height: 212
   },
   weight: '1400g',
-  comments: [Comment, Comment]
+  comments: ['The best thing ever', 'I think it has poor quality']
 },
 {
   id: 3,
@@ -32,5 +32,5 @@ export const products = [{
     height: 199.9
   },
   weight: '1360g',
-  comments: [Comment, Comment]
+  comments: ['good screen', 'better then Asus']
 }];

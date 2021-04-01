@@ -68,7 +68,6 @@ export default function Backdrop({ show, onHide, onAdd }) {
       comments: []
     }
     onAdd(prev => [...prev, newProduct]);
-    console.log(newProduct);
   } 
 
   return (
