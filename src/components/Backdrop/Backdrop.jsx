@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 
 export default function Backdrop({ show, onHide, onAdd }) {
@@ -161,4 +162,10 @@ export default function Backdrop({ show, onHide, onAdd }) {
       </Modal.Footer>
     </Modal>
   );
+}
+
+Backdrop.propTypes = {
+  show: PropTypes.func.isRequired,
+  onHide: PropTypes.func.isRequired,
+  onAdd: PropTypes.func.isRequired,
 }
