@@ -3,7 +3,7 @@ import Product from '../Product'
 import { products as goods } from '../../API/product';
 import { CardColumns, Nav } from 'react-bootstrap';
 import Backdrop from '../Backdrop';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap'
 
 
@@ -33,7 +33,6 @@ export default function Products() {
               imageUrl={product.imageUrl}
               title={product.name}
               count={product.count}
-              comments={product.comments}
               size={product.size}
               weight={product.weight}
               id={product.id}

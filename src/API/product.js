@@ -7,11 +7,11 @@ export const products = [{
     width: 588,
     height: 420
   },
-  weight: '200g',
+  weight: 200,
   comments: ['Good quality', 'not bad']
 },
 {
-  id: 4,
+  id: 2,
   imageUrl: 'https://i2.rozetka.ua/goods/22066473/copy_apple_z11c0017n_60509c0904f10_images_22066473373.jpg',
   name: 'Ноутбук Apple MacBook Pro 13',
   count: 4,
@@ -19,7 +19,7 @@ export const products = [{
     width: 304,
     height: 212
   },
-  weight: '1400g',
+  weight: 1400,
   comments: ['The best thing ever', 'I think it has poor quality']
 },
 {
@@ -31,6 +31,6 @@ export const products = [{
     width: 319.77,
     height: 199.9
   },
-  weight: '1360g',
+  weight: 1360,
   comments: ['good screen', 'better then Asus']
 }];

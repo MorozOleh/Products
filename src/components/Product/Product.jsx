@@ -1,15 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Card, Button, Nav} from 'react-bootstrap';
-import FormImpl from 'react-bootstrap/esm/Form';
-import { Link, link } from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap'
-
 
 export default function Product({
   imageUrl,
   title,
   count,
-  comments,
   size,
   weight,
   onComment,
@@ -27,6 +23,7 @@ export default function Product({
     <Card.Title>{title}</Card.Title>
     <Card.Text>{count}</Card.Text>
     <Card.Text>{`size: ${size.width}mm x ${size.height}mm`}</Card.Text>
+    <Card.Text>{`Weight: ${weight} g`}</Card.Text>
 
     <LinkContainer to={`/${id}`}>
       <Nav.Link
