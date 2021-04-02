@@ -46,10 +46,13 @@ export default function Product({
 }
 
 Product.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
-  size: PropTypes.number.isRequired,
+  size: PropTypes.shape({
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
   weight: PropTypes.number.isRequired,
-  title: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
 }

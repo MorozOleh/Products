@@ -1,26 +1,32 @@
 import React, {useEffect, useState} from 'react';
 import Product from '../Product'
-import { products as goods } from '../../API/product';
 import { CardColumns, Nav } from 'react-bootstrap';
 import Backdrop from '../Backdrop';
-import { useRouteMatch } from 'react-router-dom';
-import {LinkContainer} from 'react-router-bootstrap'
+import { useParams } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
+import { fetch } from '../../API/api';
 
 
 export default function Products() {
-  const [products, setProduct] = useState(goods)
+  const [products, setProduct] = useState([])
   const [visibleProducts, setVisibleProducts] = useState([]);
   const [modalShow, setModalShow] = useState(false);
-  const match = useRouteMatch('/:id?');
+  const { id } = useParams();
 
   useEffect(() => {
-    if (match.params.id) {
-      setVisibleProducts(products.filter(({ id }) => id === +match.params.id));
+    fetch().then(setProduct);
+  }, []);
+
+  
+
+  useEffect(() => {
+    if (id) {
+      setVisibleProducts(products.filter(product => product.id === id));
       return;
     }
 
     setVisibleProducts(products)
-  }, [match.params.id, products]);
+  }, [id, products, setVisibleProducts]);
   
   return (
     <>
@@ -40,7 +46,7 @@ export default function Products() {
           ))}
     
           </CardColumns>
-          { !match.params.id &&
+          { !id &&
               <div className="row justify-content-center">
                 <button
                   type="submit"
@@ -60,14 +66,14 @@ export default function Products() {
         </>
       }
 
-      {match.params.id &&
+      {id &&
         <>
           <ul>
-            { visibleProducts &&
+            {/* { visibleProducts &&
               visibleProducts[0].comments.map(comment => (
                 <li key={comment}>{comment}</li>
               ))
-            }
+            } */}
           </ul>
           <LinkContainer to="/">
             <Nav.Link

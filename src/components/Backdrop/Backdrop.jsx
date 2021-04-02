@@ -165,7 +165,7 @@ export default function Backdrop({ show, onHide, onAdd }) {
 }
 
 Backdrop.propTypes = {
-  show: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
   onHide: PropTypes.func.isRequired,
   onAdd: PropTypes.func.isRequired,
 }
